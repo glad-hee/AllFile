@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자1 : 기본선택자</title>
+  <style>
+
+    *{
+        color:gray
+    }
+
+    li{
+        background-color: aqua;
+        color:blue
+    }
+
+    h3{
+        background-color: black;
+        color:#fff
+
+
+
+    }
+
+    .small {
+        background-color: pink;
+    }
+    
+    .big {
+        background-color: orange;
+    }
+
+    #test {
+        background-color: skyblue;
+    }
+    
+    .tast1 {
+        background-color: blue;
+    }
+    /* 선택자 우선운쉬 */
+    /* tag>calss id id는 하나만!*/
+    /* 전체선택자 가장 후순위 */
+    /* 색깔 지정방법 */
+    /* 1. 색깔이름을 써주기 */
+    /* 2. rgb( , , ); -> 0~255까지의 수 써주기 */
+    /* 3. #~~~~ : 16진수로 이루어진 3개의 수를 연달아 써주기*/
+    /* 4. 1,2,~9,a,b,c,e */
+
+  </style>
+</head>
+
+<body>
+    <ul>
+        <li class="small">쥐</li>
+        <li class="big">소</li>
+        <li class="big">호랑이</li>
+        <li class="small">토끼</li>
+    </ul>
+
+    <h3>어흥</h3>
+    <p id="test" class="test1">p tag</p>
+</body>
+
+</html>

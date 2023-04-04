@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상요소 선택자와 속성 선택자</title>
+  <style>
+    .div {
+        background-color: pink;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    /* .div::after {
+        content: "after";
+        color: white;
+    }
+
+    .div:hover::after {
+        content: "앞";
+        color: white
+    }
+
+    .div::before {
+        content: "";
+        background-color: red;
+        display: inline-block;
+        width: 2px;
+        height: 20px;
+    } 
+
+    [disabled] {
+        background-color: red;
+    }
+
+    [placeholder] {
+        background-color: yellow;
+    }
+
+    [type="password"] {
+        font-size: 40px;
+    }
+
+    [class="square"] {
+        width: 70px;
+        height: 70px;
+        background-color: crimson;
+        border: 1px solid black
+    } */
+
+    [disabled] {
+        background-color: red;
+    }
+
+    [placeholder="이름"] {
+        background-color: orange;
+    }
+
+    [value] {
+        background-color: blue;
+    }
+  </style>
+
+  <body>
+    <input type="text" placeholder="이름" />
+    <input type="password" value="pw" />
+    <input type="text" value="000-0000-0000" />
+    <input type="text" placeholder="핸드폰" />
+    <input type="text" placeholder="주민번호" disabled />
+  </body>
+
+  </head>
+  </html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>modal</title>
+</head>
+<body>
+<div id="modal-container">
+  <div class="m-header">
+    <!--    부제-->
+    <h3 class="m-subtitle">쿠폰번호를 하단의 버튼을 눌러 입력해 주세요,</h3>
+    <!--    제목-->
+    <h1 class="m-title">제품 교환권 / 모바일 쿠폰 / 바코드</h1>
+  </div>
+  <div class="m-main">
+    <div class="m-img">
+      <img src="http://place-hold.it/300x400" alt="쿠푠입력 가이드 사진" id="img">
+    </div>
+    <div class="m-desc">
+      * 사용하실 쿠폰의 바코드를 아래 바코드 리더기에 스캔해주세요.
+    </div>
+    <input type="text" class="m-coupon-number" readonly maxlength="8">
+    <div class="m-numpad">
+      <button id="clear">clear</button>
+      <button id="number-0">0</button>
+      <button id="number-1">1</button>
+      <button id="number-2">2</button>
+      <button id="number-3">3</button>
+      <button id="number-4">4</button>
+      <button id="number-5">5</button>
+      <button id="number-6">6</button>
+      <button id="number-7">7</button>
+      <button id="number-8">8</button>
+      <button id="number-9">9</button>
+    </div>
+  </div>
+  <!--  300x400 의 넘버패드 사이즈-->
+  <div class="m-btn-wrap">
+    <div class="m-btn">
+      <!--        가격 버튼 우하단-->
+      <button id="cancel">취소</button>
+    </div>
+    <div class="m-close-btn">
+      <!--        닫기 버튼 우상단-->
+      <button id="enter">쿠폰 번호 입력</button>
+    </div>
+  </div>
+</div>
+<!--div(modal-container)-->
+<!--div(m-header) div(m-subtitle) div(m-title)-->
+<!--div(m-main) div(m-img)-img div(m-desc)-->
+<!--div(m-btn-wrap) div(m-btn)-button div(m-close-btn)-button-->
+</body>
+<script></script>
+</html>

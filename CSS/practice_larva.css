@@ -1,0 +1,76 @@
+.compose {
+    position: relative;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    width: 700px;
+    height: 500px;
+}
+.groom {
+    background-image: url(/grass.png);
+    background-repeat: no-repeat;
+    background-size: 370px;
+    background-position: left;
+    width: 500px;
+    height: 500px;
+    z-index: 5;
+    position: relative;
+}
+
+.circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.circle1 {
+    background-color:midnightblue;
+    top: 70px;
+    left: 90px;
+    z-index: 1;
+}
+
+.circle2 {
+    background-color: blue;
+    top: 105px;
+    left: 130px;
+    z-index: 2;
+}
+    
+.circle3 {
+    background-color: rgb(57, 85, 212);
+    top: 138px;
+    left: 160px;
+    z-index: 3;
+}
+
+.circle4 {
+    background-color: #427c98;
+    top: 180px;
+    left: 170px;
+    z-index: 4;
+}
+
+.circle5 {
+    background-color: lightblue;
+    top: 200px;
+    left: 200px;
+    z-index: 6;
+}
+
+.circle6 {
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    top: 80px;
+    left: 103px;
+    z-index: 2;
+}
+
+.eye {
+    background-color: black;
+    width:15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 7.5px 0px 0px 0px
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>first page</title>
+    <script defer src="./test3.js"></script>
+    <link rel="stylesheet" href="./kiosk.css" />
+  </head>
+
+  <body class="window">
+    <div id="body" class="container">
+      <div class="wrap">
+        <header>
+          <h1 class="title">Flower shop kiosk</h1>
+        </header>
+        <nav>
+          <div class="nvb">
+            <input type="button" value="" />
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+          </div>
+        </nav>
+        <main>
+          <div class="item-wrap">
+            <div class="item item1">
+              <div id="Flower-price">20000</div>
+              <div id="Flower-image">
+                <img
+                  src="./daisies-3439573_960_720.jpg"
+                  alt="ff"
+                  onclick="openModal(0)"
+                />
+              </div>
+            </div>
+            <div class="item item2">
+              <div id="Flower-price">20000</div>
+              <div id="Flower-image">
+                <img
+                  src="./lilies-of-the-valley-4240129_960_720.jpg"
+                  alt="ff"
+                  onclick="openModal(1)"
+                />
+              </div>
+            </div>
+            <div class="item item3">
+              <div id="Flower-price">20000</div>
+              <div id="Flower-image">
+                <img
+                  src="./sunflower-1627193_960_720.jpg"
+                  alt="ff"
+                  onclick="openModal(2)"
+                />
+              </div>
+            </div>
+            <div class="item item4">
+              <div id="Flower-price">20000</div>
+              <div id="Flower-image"><img src="" alt="" /></div>
+            </div>
+            <div class="item item5">
+              <div id="Flower-price">20000</div>
+              <div id="Flower-image"><img src="" alt="" /></div>
+            </div>
+            <div class="item item6">
+              <div id="Flower-price">20000</div>
+              <div id="Flower-image"><img src="" alt="" /></div>
+            </div>
+            <div class="item item7">
+              <div id="Flower-price">20000</div>
+              <div id="Flower-image"><img src="" alt="" /></div>
+            </div>
+            <div class="item item8">
+              <div id="Flower-price">20000</div>
+              <div id="Flower-image"><img src="" alt="" /></div>
+            </div>
+            <div class="item item9">
+              <div id="Flower-price">20000</div>
+              <div id="Flower-image"><img src="" alt="" /></div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <footer>
+      <div class="cart">
+        <h2>Cart</h2>
+        <ul class="cart-items"></ul>
+        <p class="cart-total">Total $0.00</p>
+        <button>Checkout</button>
+      </div>
+    </footer>
+
+    <div class="product product1" id="modal">
+      <div id="modal-container">
+        <img id="modal-image" src="" alt="" />
+
+        <h3></h3>
+        <p id="product-price"></p>
+        <button id="purchase" onclick="addToCart()">Add</button>
+        <button class="close" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </body>
+</html>

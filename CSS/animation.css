@@ -1,0 +1,141 @@
+/*
+transition vs animation
+
+transition
+    -전환될 "스타일"을 지정
+    -hover, active, onclick 등의 이벤트에 의해 발생
+
+    animation
+    -중간 step지정 가능 : 보다 세밀한 스타일 전화 가능
+    -정비, 반복, 시작 동작 가능
+    -@keyframes로 이루어짐
+    */
+
+/* .box {
+    width: 100px;
+    height: 100px;
+    background-color: cadetblue;
+    position: relative;
+
+    animation-name: my-ani;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+ 반복되기때문에 0%와100%을 같게해야 부드러움 안그럼 끊겨보임 
+@keyframes my-ani {
+    0% {
+        left: 0;
+    }
+
+    25% {
+        left: 200px;
+    }
+
+    50% {
+        left: 400px;
+    }
+
+    75% {
+        left: 200px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+.bounce-ball1 {
+    position: relative;
+    left: 100px;
+    top: 0;
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #000;
+    
+    animation-name: bounce1;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate
+
+}
+
+@keyframes bounce1 {
+    to {
+        top:0;
+        animation-timing-function: ease-out;
+    }
+
+    from {
+        top: 300px;
+    }
+}
+
+.bounce-ball2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: tomato;
+    position: absolute;
+
+    animation: bounce2 2s linear infinite;
+}
+
+@keyframes bounce2 {
+    from,to {
+        bottom: 0;
+        animation-timing-function: ease-out;
+    }
+
+    50% {
+        bottom: 300px;
+        animation-timing-function: ease-in;
+    }
+} */
+
+* {
+    margin: 0;
+}
+div {
+    width: 100px;
+    height: 100px;
+    background-color: palevioletred;
+    border-radius: 50%;
+    position: relative;
+    animation-name: circle;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+@keyframes circle {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    25% {
+        left: calc(100vw - 100px);
+        top: 0;
+    }
+
+    50% {
+        top: calc(100vh - 100px);
+        left: calc(100vw - 100px);
+    }
+
+    75% {
+        left: 0;
+        top: calc(100vh - 100px);
+    }
+
+    100% {
+        top: 0;
+        left:0;
+    }
+}

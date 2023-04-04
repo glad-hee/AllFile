@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Header</title>
+    <style>
+      .inner {
+        background-color: blueviolet;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        text-align: center;
+        line-height: 60px;
+      }
+
+      .logo {
+        font-size: 30px;
+        color: white;
+        margin: 20px;
+      }
+
+      .right {
+        display: flex;
+      }
+
+      .menu {
+        line-height: 80px;
+        margin: 10px;
+        color: white;
+      }
+
+      .back {
+        position: relative;
+        background-color: white;
+        width: 100%;
+        height: 124px;
+      }
+
+      @media screen and (max-width: 992px) {
+        .back {
+          background-color: violet;
+        }
+        .right {
+          position: absolute;
+          display: block;
+          top: 84px;
+          z-index: 1;
+        }
+        .menu {
+          margin: 0;
+          padding: 0;
+          height: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <div class="logo">LOGO</div>
+        <div class="right">
+          <div class="menu">메뉴1</div>
+          <div class="menu">메뉴2</div>
+          <div class="menu">메뉴3</div>
+          <div class="menu">메뉴4</div>
+        </div>
+      </div>
+    </header>
+    <div class="back"></div>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1><%= title%></h1>
+
+    <!-- #1 form -->
+    <!-- <h2>GET요청</h2>
+    <form action="/getForm" name="login1" method="get" class="fist">
+      <input type="text" name="id" placeholder="ID" />
+      <input type="password" name="pw" placeholder="PW" />
+      <button type="submit">제출</button>
+    </form>
+
+    <h2>POST요청</h2>
+    <form action="/postForm" name="login2" method="post">
+      <input type="text" name="id" placeholder="ID" minlength="" />
+      <input type="password" name="pw" placeholder="PW" />
+      <button type="submit">제출</button>
+    </form> -->
+
+    <!-- #2 form vaildation -->
+    <h2>GET요청</h2>
+    <form action="/getForm" name="login1" method="get" class="fist">
+      <input
+        type="text"
+        name="id"
+        placeholder="ID는 최소 3글자"
+        minlength="3"
+        required
+      />
+      <input
+        type="password"
+        name="pw"
+        placeholder="PW는 4~8글자"
+        minlength="4"
+        maxlength="8"
+        required
+      />
+      <input type="email" name="email" placeholder="EMAIL" required />
+      <input type="number" name="grade" placeholder="GRADE" min="1" required />
+      <button type="submit">제출</button>
+    </form>
+
+    <h2>POST요청</h2>
+    <form action="/postForm" name="login2" method="post">
+      <!-- id 대소문자,한글,숫자 / 4글자 이상 중괄호는 숫자범위-->
+      <!-- pw 소문자,숫자 / 8자리이상 12자리 이하 -->
+      <!-- ex. [a-z]: a부터 z까지, [0-9]: 0부터 9까지 -->
+      <input
+        type="text"
+        name="id"
+        placeholder="ID"
+        minlength="4"
+        pattern="([a-zA-Z0-9가-힣]){4,}"
+        title="대소문자,한글,숫자를 포함하여 4글자 이상 작성해주세요"
+        required
+      />
+      <input
+        type="password"
+        name="pw"
+        placeholder="PW"
+        pattern="([a-z0-9]){8,12}"
+        title="소문자,숫자로 8글자이상 12자리 이하로 작성해주세요"
+        required
+      />
+      <button type="submit">제출</button>
+    </form>
+
+    <script>
+      console.log("hihi");
+
+      // form태그의 name 속성 값으로 폼 선택하기
+      console.log(document.forms["login1"]);
+      console.log(document.forms["login2"]);
+
+      // 클래스 지정해서 form선택도 가능함
+      console.log(document.querySelector(".fist").forms);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+ /* Noto Sans Korean */
+
+.font-import {
+    font-family: 'noto_sans_korean';
+}
+
+.sentences {
+    font-weight: 700;
+    text-align: center;
+    text-decoration: line-through;
+    text-decoration: underline;
+    line-height: 2;
+    
+    
+}
+
+a {
+    text-decoration: none;
+    color:black
+}
+
+@font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Dovemayo_gothic';
+}

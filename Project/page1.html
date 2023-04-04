@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="view-transition" content="same-origin">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./modal.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      }
+
+    body {
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      background-color: ivory;
+      }
+
+    .bb-container {
+      position: relative;
+      border: 2px solid #d9e471;
+      border-radius: 20px;
+      background-color: #f6f8dc;
+      height: 100%;
+
+      }
+
+    /*와이어프레이밍 컬러*/
+    .grey1 {
+      background-color: #f2f2f2;
+      }
+
+    .grey2 {
+      background-color: #d9d9d9;
+      }
+
+    .grey3 {
+      background-color: #a6a6a6;
+      }
+
+    .grey4 {
+      background-color: #808080;
+      }
+
+    .grey5 {
+      background-color: #333333;
+      }
+
+    .bb-header {
+      /*width: 100vw;*/
+      height: 140px;
+      }
+
+    .bb-container {
+      overflow: hidden;
+      }
+
+    /* 커스텀 레이아웃*/
+    /* 로고 센터*/
+    .bb-logo-title {
+      text-align: center;
+      }
+
+    /* h1 텍스트 지우기*/
+    .bb-logo-title h1 {
+      overflow: hidden;
+      text-indent: 100%;
+      white-space: nowrap;
+      }
+
+    /*  h1 백그라운드 로고 만들기*/
+    .bb-logo-title h1 {
+      width: 100%;
+      background: url(https://place-hold.it/100x70) no-repeat center;
+      }
+
+    .bb-logo {
+      height: 100%;
+      }
+
+    /* 상품 카테고리 탭 */
+
+    /* 상품 메인 컨텐츠 */
+    .bb-item-details,
+    .bb-item-title {
+      text-align: center;
+      }
+
+    /*  상품 메인 스크롤 */
+    .bb-main-item-wrap {
+      height: calc(100vh - 40vh);
+      overflow: auto;
+      }
+
+    /*  가격 정렬 우측*/
+    .bb-item-price {
+      text-align: right;
+      }
+
+    img {
+      max-width: 100%;
+      }
+
+    .bb-proceed-btn {
+      display: flex;
+      }
+
+    .bb-history {
+      height: 20vh;
+      }
+
+    .bb-buy-btn {
+      width: 100%;
+      height: 30px;
+      }
+
+    /*  footer*/
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      }
+  </style>
+</head>
+<body>
+<div class="bb-container container-fluid g-0 col-md-offset-4 col-md-6">
+  <header class="row bb-header col-xs-10 m-0">
+    <div class="bb-logo-title">
+      <h1 class="bb-logo col-xs-6">로고 영역</h1>
+    </div>
+    <div class="bb-btn-wrap row flex-nowrap">
+      <div class="bb-btn1 col-sm-3 col-md-3 grey2">test button1</div>
+      <div class="bb-btn2 col-sm-3 col-md-3 grey3">test btn2</div>
+      <div class="bb-btn3 col-sm-3 col-md-3 grey2">test btn3</div>
+      <div class="bb-btn3 col-sm-3 col-md-3 grey5">test btn4</div>
+      <div class="bb-btn3 col-sm-3 col-md-3 grey2">test btn4</div>
+    </div>
+  </header>
+  <div class="row main justify-content-center text-center">
+    <div class="bb-main-item-wrap col-md-offset-1 col-md-10 grey4">
+      <!--      아이템 컨테이너-->
+      <div class="row bb-main-item-container text-center">
+        <!--        개별 아이템-->
+        <div class="bb-main-item col-sm-6 col-md-4">
+          <div class="bb-item-details grey1 m-3">
+            <p class="bb-item-title"> 🌸 꽃 이름 1 🌸</p>
+            <div class="bb-item-img">
+              <img src="https://place-hold.it/300x200" alt="">
+            </div>
+            <div class="bb-item-price">₩15,000</div>
+          </div>
+        </div>
+        <div class="bb-main-item col-sm-6 col-md-4">
+          <div class="bb-item-details grey1 m-3">
+            <p class="bb-item-title"> 🌸 꽃 이름 2 🌸</p>
+            <div class="bb-item-img">
+              <img src="https://place-hold.it/300x200" alt="">
+            </div>
+            <div class="bb-item-price">₩15,000</div>
+          </div>
+        </div>
+        <div class="bb-main-item col-sm-6 col-md-4">
+          <div class="bb-item-details grey1 m-3">
+            <p class="bb-item-title"> 🌸 꽃 이름 3 🌸</p>
+            <div class="bb-item-img">
+              <img src="https://place-hold.it/300x200" alt="">
+            </div>
+            <div class="bb-item-price">₩15,000</div>
+          </div>
+        </div>
+        <div class="bb-main-item col-sm-6 col-md-4">
+          <div class="bb-item-details grey1 m-3">
+            <p class="bb-item-title"> 🌸 꽃 이름 4 🌸</p>
+            <div class="bb-item-img">
+              <img src="https://place-hold.it/300x200" alt="">
+            </div>
+            <div class="bb-item-price">₩15,000</div>
+          </div>
+        </div>
+        <div class="bb-main-item col-sm-6 col-md-4">
+          <div class="bb-item-details grey1 m-3">
+            <p class="bb-item-title"> 🌸 꽃 이름 6 🌸</p>
+            <div class="bb-item-img">
+              <img src="https://place-hold.it/300x200" alt="">
+            </div>
+            <div class="bb-item-price">₩15,000</div>
+          </div>
+        </div>
+        <div class="bb-main-item col-sm-6 col-md-4">
+          <div class="bb-item-details grey1 m-3">
+            <p class="bb-item-title"> 🌸 꽃 이름 5 🌸</p>
+            <div class="bb-item-img">
+              <img src="https://place-hold.it/300x200" alt="">
+            </div>
+            <div class="bb-item-price">₩15,000</div>
+          </div>
+        </div>
+        <div class="bb-main-item col-sm-6 col-md-4">
+          <div class="bb-item-details grey1 m-3">
+            <p class="bb-item-title"> 🌸 꽃 이름 5 🌸</p>
+            <div class="bb-item-img">
+              <img src="https://place-hold.it/300x200" alt="">
+            </div>
+            <div class="bb-item-price">₩15,000</div>
+          </div>
+        </div>
+        <div class="bb-main-item col-sm-6 col-md-4">
+          <div class="bb-item-details grey1 m-3">
+            <p class="bb-item-title"> 🌸 꽃 이름 5 🌸</p>
+            <div class="bb-item-img">
+              <img src="https://place-hold.it/300x200" alt="">
+            </div>
+            <div class="bb-item-price">₩15,000</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!--  하단 결제 버튼 페이지-->
+  <footer class="footer">
+    <div class="row">
+      <!--    구매내역 / 장바구니 -->
+      <div class="bb-history col-md-7 grey3">
+        구매내역
+      </div>
+      <!--    결제관련 버튼 -->
+      <div class="bb-proceed-btn col-md-5 grey2 row">
+        <div class="col-sm-12 col-md-7">
+          <!-- 다음페이지 링크 달것 -->
+          <button type="button" onclick="location.href='page2.html'" class="bb-buy-btn"> 구매하러 가기</button>
+        </div>
+        <div class="col-sm-6 col-md-5">
+          <button type="button" id="reset">RESET</button>
+        </div>
+        <div class="col-sm-6 col-md-12">
+          <button type="button" id="coupon" onclick="modal()">Coupon</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  const resetBtn = document.querySelector('#reset');
+  const couponBtn = document.querySelector('#coupon');
+
+  resetBtn.addEventListener('click', function () {
+    //   구매내역의 정보 innerthtml ='';
+    // 데이터 값 = 0;
+  })
+  couponBtn.addEventListener('click', function () {
+    const fragment = document.createDocumentFragment();
+  });
+
+
+</script>
+</body>
+</html>

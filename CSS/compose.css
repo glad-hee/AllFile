@@ -1,0 +1,41 @@
+.parent {
+    background-color: aquamarine;
+    width: 300px;
+    height: 300px;
+}
+
+.child {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+}
+
+.parent1 {
+    position: relative;
+}
+
+.child1 {
+    position: absolute;
+    margin:  auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.parent2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent3 {
+    position: relative;
+}
+
+.child3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

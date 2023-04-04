@@ -1,0 +1,38 @@
+body {
+    height: 2000px;
+}
+
+.box {
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.background {
+    background-color: aqua;
+    background: palegreen;
+    background: linear-gradient(to bottom,black,blueviolet);
+}
+
+.background-image {
+    background-image: url(/small_img.png);
+    /* background-repeat */
+    background-repeat: repeat; /* default */
+    background-repeat: no-repeat;
+
+    /* background-position */
+    background-position: 10px 10px; /*f숫자값 하나만 입력하면 x축에 대해서만 적용 */
+    background-position: center;
+
+    /* background-size */
+    background-size: auto; /* default */
+    background-size: 60px; /* x축적용후 세로는 비율유지됨 */
+    background-size: 100px 50px;
+    background-size: contain;
+
+    /* background-attachment */
+    background-attachment: fixed; /* fixed-뷰포트(브라우저) 기준 */
+
+}
