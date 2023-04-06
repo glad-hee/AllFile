@@ -60,3 +60,31 @@ exports.deleteVisitor = (id, callback) => {
     callback(true);
   });
 };
+
+exports.getVisitor = (id, callback) => {
+  console.log(id); // controller 에서 보내주는 req.query.id
+
+  const sql = `SELECT * FROM visitor WHERE id = ${id}`;
+  conn.query(sql, (err, rows) => {
+    if (err) {
+      throw err;
+    }
+
+    console.log("Visitor.js >>", rows);
+    callback(rows[0]);
+  });
+};
+
+exports.patchVisitor = (data, callback) => {
+  console.log(data); // controller 에서 보내주는 req.body
+
+  const sql = `UPDATE visitor SET name = '${data.name}' , comment = '${data.comment}' WHERE id = ${data.id}`;
+  conn.query(sql, (err, rows) => {
+    if (err) {
+      throw err;
+    }
+
+    console.log("Visitor.js >>", rows);
+    callback(); // controllor 에 보내줄 정보가 딱히 음슴
+  });
+};

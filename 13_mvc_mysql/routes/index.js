@@ -6,12 +6,18 @@ const router = express.Router();
 router.get("/", controller.main);
 
 // GET /visitor => localhost:PORT/visitor
-router.get("/visitor", controller.getVisitors); // 전체 조회
+router.get("/visitor", controller.getVisitors); // ALL CHECK
 
 // POST /visitor/write
-router.post("/visitor/write", controller.postVisitor); // 하나 추가
+router.post("/visitor/write", controller.postVisitor); // ADD
+
+// GET /visitor/get
+router.get("/visitor/get", controller.getVisitor); // CHECK
+
+// PATCH /visitor/edit
+router.patch("/visitor/edit", controller.patchVisitor); // EDIT
 
 // DELETE /visitor/delete
-router.delete("/visitor/delete", controller.deleteVisitor); // 삭제
+router.delete("/visitor/delete", controller.deleteVisitor); // DELETE
 
 module.exports = router;
