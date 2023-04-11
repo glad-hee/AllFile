@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('include/include', { title: 'Login' })%>
+  <body>
+    <h1>Login</h1>
+    <br />
+    <form name="form_login">
+      <div class="mb-3">
+        <label for="userid" class="form-label">ID</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userid"
+          aria-describedby="emailHelp"
+          name="userid"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="pw" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="pw"
+          name="pw"
+          required
+        />
+      </div>
+      <button type="button" class="btn btn-primary" onclick="login()">
+        Login
+      </button>
+    </form>
+    <br />
+    <br />
+    <a href="/">HOME</a>
+
+    <script>
+      function login() {
+        const form = document.forms["form_login"];
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        axios({
+          method: "POST",
+          url: "/login",
+          data: {
+            userid: form.userid.value,
+            pw: form.pw.value,
+          },
+        }).then((res) => {
+          console.log(res);
+
+          if (res.data) {
+            alert("로그인 성공");
+            document.location.href = "/";
+          } else {
+            alert("아이디 또는 비밀번호를 확인해주세요");
+            form.userid.value = "";
+            form.pw.value = "";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('include/include', { title: 'Session' })%>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a
+              class="nav-link active"
+              id="reg"
+              aria-current="page"
+              href="/register"
+              >Register</a
+            >
+            <a
+              class="nav-link active"
+              id="log"
+              aria-current="page"
+              href="/login"
+              >Login</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <h1>Session Practice</h1>
+    <p>여기는 홈입니다</p>
+    <P><%= data %></P>
+  </body>
+  <script>
+    console.log("<%= login %>");
+    if ("<%= login %>".length == 4) {
+      document.querySelector("#log").setAttribute("href", "/logout");
+      document.querySelector("#log").textContent = "Logout";
+      document.querySelector("#reg").style.display = "none";
+    } else {
+      console.log("login");
+    }
+  </script>
+</html>
