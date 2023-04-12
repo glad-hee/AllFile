@@ -14,7 +14,7 @@ const conn = mysql.createConnection({
   host: "localhost", // databse 가 설치된 ip 주소
   user: "user", // 데이터베이스 접속 계정명
   password: "5656", // 데이터베이스 접속 비번
-  database: "kdt", // 사용할 데이터베이스 이름
+  database: "codingon", // 사용할 데이터베이스 이름
 });
 
 exports.getVisitors = (callback) => {

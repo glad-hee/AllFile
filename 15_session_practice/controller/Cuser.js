@@ -45,7 +45,6 @@ exports.signin = (req, res) => {
   }).then((result) => {
     if (result != undefined) {
       //   console.log(result.dataValues);
-      //   왜 result[0]은 안되는가 ㅅㅂ
       req.session.userid = result.dataValues;
       console.log(req.session.userid.name);
       res.send(true);

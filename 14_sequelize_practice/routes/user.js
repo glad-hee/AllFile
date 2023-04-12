@@ -23,6 +23,12 @@ router.post("/signin", controller.loginUser);
 // post
 router.post("/profile", controller.viewProfile);
 
+// FIRST EDIT
+router.get("/profile/select", controller.editFirst);
+
+// oneProfile
+// router.post("/profile".controller.oneProfile);
+
 // PATCH
 router.post("/profile/edit", controller.editProfile);
 

@@ -65,12 +65,22 @@ exports.viewProfile = (req, res) => {
   //   }
   // });
 
-  models.User.findOne({
-    where: { userid: req.body.userid },
-  }).then((result) => {
+  models.User.findAll().then((result) => {
     if (result != null) {
-      res.render("profile", { data: result });
+      res.render("profile", {
+        data: result,
+        userid: req.body.userid,
+        pw: req.body.pw,
+      });
     }
+  });
+};
+
+exports.editFirst = (req, res) => {
+  models.User.findOne({
+    where: { id: req.body.id },
+  }).then((result) => {
+    res.send(result);
   });
 };
 

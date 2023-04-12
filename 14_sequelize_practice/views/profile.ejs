@@ -16,7 +16,7 @@
         id="userid"
         type="text"
         name="userid"
-        value="<%= data.userid %>"
+        value="<%= userid %>"
         readonly
       /><br />
       <label for="password">Password</label>
@@ -24,7 +24,7 @@
         id="password"
         type="password"
         name="pw"
-        value="<%= data.pw %>"
+        value="<%= pw %>"
         required
       /><br />
       <label for="name">Name</label>
@@ -35,13 +35,69 @@
         value="<%= data.name %>"
         required
       /><br />
-      <button type="button" onclick="profileEdit();">Edit</button>
-      <button type="button" onclick="profileDelete();">Delete</button>
     </form>
 
+    <br />
+
+    <table border="1" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>userid</th>
+          <th>Name</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let i = 0; i < data.length; i++) { %>
+        <tr id="tr_<%= data[i].id %>">
+          <td><%= data[i].id %></td>
+          <td><%= data[i].userid %></td>
+          <td><%= data[i].name  %></td>
+          <td>
+            <button type="button" id="EditButton" onclick="editFirst('<%= data[i].id %>')">
+              Edit
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              onclick="profileDelete(this, '<%= data[i].id %>')"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    </form>
     <script>
       // TODO: [Login] 버튼 클릭시 서버에 회원 정보 수정 요청하기
       // POST /user/profile/edit
+      const editButton = document.getElementById('EditButton')
+
+      function editFirst(id) {
+        axios ({
+          method : 'GET',
+          url : '/profile/select',
+          params : {
+            id : id
+          }
+        }).then((res)=> {
+          const form = document.forms['form-profile']
+          form.pw.value = res.data.pw;
+          form.name.value = res.data.name;
+          
+          const btns = `<button type='button' onclick='profileEdit(${id})'>Allow</button>`;
+
+          editButton.innerHTML = btns;
+
+        })
+
+      }
+
       function profileEdit() {
         const form = document.forms["form_profile"];
 
@@ -77,7 +133,6 @@
           },
         }).then((res) => {
           alert("회원 탈퇴 성공");
-          document.location.href = "/user";
         });
       }
     </script>

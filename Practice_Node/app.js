@@ -9,9 +9,8 @@ app.use("/views", express.static(__dirname + "/views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
+const indexRouter = require("./routes");
+app.use("/", indexRouter);
 
 // 2-1. /axios 로 get요청
 app.get("/axios", (req, res) => {
@@ -20,15 +19,15 @@ app.get("/axios", (req, res) => {
 });
 
 // 2-2 /axios 로 post요청
-app.post("/axios", (req, res) => {
-  const userId = "glad";
-  const userPw = "5656";
-  if (req.body.userId === userId && req.body.userPw === userPw) {
-    res.send({ isLogin: true, userInfo: req.body });
-  } else if (req.body.userId !== userId || req.body.userPw !== userPw) {
-    res.send({ isLogin: false });
-  }
-});
+// app.post("/axios", (req, res) => {
+//   const userId = "glad";
+//   const userPw = "5656";
+//   if (req.body.userId === userId && req.body.userPw === userPw) {
+//     res.send({ isLogin: true, userInfo: req.body });
+//   } else if (req.body.userId !== userId || req.body.userPw !== userPw) {
+//     res.send({ isLogin: false });
+//   }
+// });
 
 app.listen(PORT, () => {
   console.log("웹서버실행");

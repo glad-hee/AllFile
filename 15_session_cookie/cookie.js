@@ -36,9 +36,11 @@ app.get("/", (req, res) => {
   if (req.cookies["cookie"]) {
     res.render("index", { data: "있" });
     console.log(req.cookies);
+    console.log(req.cookies.cookie);
   } else {
     res.render("index", { data: "없" });
     console.log(req.cookies);
+    console.log(req.cookies.cookie);
   }
 });
 
@@ -53,6 +55,14 @@ app.post("/cookie", (req, res) => {
   res.send(req.cookies);
   console.log(req.cookies);
 });
+
+// cookie
+// req 객체
+// req.cookies : cookie-parser 가 만드는 요청의 쿠키를 해석한 객체
+
+// res 객체
+// res.cookie(key, value, options) : 쿠키 설정 메소드
+// req.clearCookie(key, value, options) : 쿠키 삭제 메소드
 
 // 1. 쿠키 설정
 // app.get("/setCookie", (req, res) => {
