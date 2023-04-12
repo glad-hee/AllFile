@@ -2,9 +2,9 @@ const models = require("../models");
 
 exports.index = (req, res) => {
   if (req.session.userid !== undefined) {
-    console.log(req.session.userid);
+    // console.log(req.session.userid);
     res.render("index", {
-      data: `${req.session.name}님 환영합니다`,
+      data: `${req.session.userid.name}님 환영합니다`,
       login: true,
     });
   } else {
@@ -43,10 +43,11 @@ exports.signin = (req, res) => {
       pw: req.body.pw,
     },
   }).then((result) => {
-    if (result != null) {
-      //   console.log(result);
-      req.session.userid = req.body.userid;
-      req.session.name;
+    if (result != undefined) {
+      //   console.log(result.dataValues);
+      //   왜 result[0]은 안되는가 ㅅㅂ
+      req.session.userid = result.dataValues;
+      console.log(req.session.userid.name);
       res.send(true);
     } else {
       res.send(false);
