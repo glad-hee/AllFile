@@ -43,7 +43,7 @@ exports.signin = (req, res) => {
       pw: req.body.pw,
     },
   }).then((result) => {
-    if (result != undefined) {
+    if (result !== undefined) {
       //   console.log(result.dataValues);
       req.session.userid = result.dataValues;
       console.log(req.session.userid.name);
@@ -59,7 +59,12 @@ exports.logout = (req, res) => {
     if (err) {
       throw err;
     }
+    req.session;
   });
 
   res.redirect("/");
 };
+
+// req.session : '사용자'별로 해당 객체({})안에 세션 정보 유지
+// req.session.키 = 값; 세션쿠키설정
+// req.session.키; 세션쿠키사용(읽기)

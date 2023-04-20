@@ -42,12 +42,14 @@
   </body>
   <script>
     console.log("<%= login %>");
-    if ("<%= login %>".length == 4) {
+
+    // true,false가 문자열로 반환되기때문
+    if ("<%= login %>" === "true") {
       document.querySelector("#log").setAttribute("href", "/logout");
       document.querySelector("#log").textContent = "Logout";
       document.querySelector("#reg").style.display = "none";
     } else {
-      console.log("login");
+      console.log("false");
     }
   </script>
 </html>
