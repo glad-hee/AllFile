@@ -1,15 +1,12 @@
-import Ref1 from "./Ref1";
-import Ref2 from "./Ref2";
-import Ref3 from "./Ref3";
-import Ref4 from "./Ref4";
+// import LifeCycleFunc from "./LifeCycleFunc";
+
+import LifeCycleClass from "./LifeCycleClass";
 
 function App() {
   return (
     <div className="App">
-      <Ref1 />
-      <Ref2 />
-      <Ref3 />
-      <Ref4 />
+      {/* <LifeCycleFunc /> */}
+      <LifeCycleClass />
     </div>
   );
 }
