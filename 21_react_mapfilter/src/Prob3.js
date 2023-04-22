@@ -1,5 +1,6 @@
 // TODO: useState 불러오기
 import { useState } from "react";
+import { useRef } from "react";
 
 const Prob3 = () => {
   const [inputWriter, setInputWriter] = useState(""); // 작성자 input state
@@ -25,8 +26,28 @@ const Prob3 = () => {
   const [result, setResult] = useState([]); // 검색 결과 배열 state
   const [searchType, setSearchType] = useState("writer"); // 검색 타입 select 요소 value state
 
+  // useRef
+  const writerRef = useRef();
+  const titleRef = useRef();
+
+  const checkInputValue = () => {
+    if (inputWriter.trim().length === 0) {
+      writerRef.current.focus();
+      return false;
+    }
+
+    if (inputTitle.trim().length === 0) {
+      titleRef.current.focus();
+      return false;
+    }
+    return true;
+  };
+
   const addComment = () => {
     console.log("추가 버튼 클릭!");
+
+    if (!checkInputValue()) return;
+
     // TODO: comment state에 원소 추가
 
     const newData = {
@@ -92,6 +113,7 @@ const Prob3 = () => {
           name="writer"
           value={inputWriter}
           onChange={(e) => setInputWriter(e.target.value)}
+          ref={writerRef}
         />
         <label htmlFor="title">제목:</label>
         <input
@@ -100,6 +122,7 @@ const Prob3 = () => {
           name="title"
           value={inputTitle}
           onChange={(e) => setInputTitle(e.target.value)}
+          ref={titleRef}
         />
         <button type="button" onClick={addComment}>
           작성
