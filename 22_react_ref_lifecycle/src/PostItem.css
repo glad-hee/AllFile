@@ -1,0 +1,12 @@
+* {
+  /* margin: 0; */
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  flex-direction: column;
+  width: 80vw;
+  height: 130px;
+  border: 1px black solid;
+}
