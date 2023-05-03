@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Header {
+  background-color: #ddd;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-item {
+  margin: 0 8px;
+}
+
+.MainPage {
+  background-color: aqua;
+  min-height: calc(100vh - 100px);
+
+  &.Dark {
+    background-color: #333;
+  }
+}
+
+.ProductPage {
+  background-color: cadetblue;
+  min-height: calc(100vh - 100px);
+}
+
+.ProductDetailPage {
+  background-color: slategray;
+  min-height: calc(100vh - 100px);
+}
+
+.ProductItem {
+  background-color: azure;
+  width: 80vw;
+  margin: 30px auto 0 auto;
+  list-style: none;
+
+  &:hover {
+    font-weight: 700;
+  }
+}

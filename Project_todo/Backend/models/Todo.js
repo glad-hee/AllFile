@@ -8,11 +8,17 @@ const Todo = function (Sequelize, DataTypes) {
         primaryKey: true,
         autoIncrement: true,
       },
+      userid: { type: DataTypes.STRING(20), allowNull: false },
+      pw: { type: DataTypes.STRING(20), allowNull: false },
       title: {
         type: DataTypes.STRING(100),
         allowNull: false,
       },
-      done: {},
+      done: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
+      },
     },
     { tableName: "todo", freezeTableName: true, timestamps: false }
   );
