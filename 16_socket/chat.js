@@ -41,6 +41,7 @@ io.on("connection", (socket) => {
   console.log("🙈Server Socket Connected>>", socket.id);
 
   // Practice 1
+
   //   socket.on("hello", (data) => {
   //     console.log(`${data.who} : ${data.msg}`);
   //     socket.emit("helloKr", { who: "희성", msg: "안녕" });
